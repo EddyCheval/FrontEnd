@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MarcassinMobile.Page.PageNote">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="titre" Text="Les notes" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/>
+            <Label x:Name="Competence" Text="Compétence" Grid.Column="0" Grid.Row="1"/>
+            <Label x:Name="Employe" Text="Employé"  Grid.Column="1" Grid.Row="1"/>
+            <Label x:Name="general" Text="Général" Grid.Column="0" Grid.Row="2"/>
+            <Picker x:Name="NoteGenerale" Title="choisir la note" Grid.Column="1" Grid.Row="2" SelectedIndex="0">
+                <Picker.Items>
+                    <x:String>0</x:String>
+                    <x:String>1</x:String>
+                    <x:String>2</x:String>
+                    <x:String>3</x:String>
+                    <x:String>4</x:String>
+                    <x:String>5</x:String>
+                    <x:String>6</x:String>
+                    <x:String>7</x:String>
+                    <x:String>8</x:String>
+                    <x:String>9</x:String>
+                    <x:String>10</x:String>
+                </Picker.Items>
+                <Picker.SelectedIndex>0</Picker.SelectedIndex>
+            </Picker>
+            <Label x:Name="communication" Text="Communication" Grid.Column="0" Grid.Row="3"/>
+            <Picker x:Name="NoteCommunication" Title="choisir la note" Grid.Column="1" Grid.Row="3" SelectedIndex="0">
+                <Picker.Items>
+                    <x:String>0</x:String>
+                    <x:String>1</x:String>
+                    <x:String>2</x:String>
+                    <x:String>3</x:String>
+                    <x:String>4</x:String>
+                    <x:String>5</x:String>
+                    <x:String>6</x:String>
+                    <x:String>7</x:String>
+                    <x:String>8</x:String>
+                    <x:String>9</x:String>
+                    <x:String>10</x:String>
+                </Picker.Items>
+                <Picker.SelectedIndex>0</Picker.SelectedIndex>
+            </Picker>
+            <Label x:Name="connaissance" Text="Connaissance" Grid.Column="0" Grid.Row="4"/>
+            <Picker x:Name="NoteConnaissance" Title="choisir la note" Grid.Column="1" Grid.Row="4" SelectedIndex="0">
+                <Picker.Items>
+                    <x:String>0</x:String>
+                    <x:String>1</x:String>
+                    <x:String>2</x:String>
+                    <x:String>3</x:String>
+                    <x:String>4</x:String>
+                    <x:String>5</x:String>
+                    <x:String>6</x:String>
+                    <x:String>7</x:String>
+                    <x:String>8</x:String>
+                    <x:String>9</x:String>
+                    <x:String>10</x:String>
+                </Picker.Items>
+                <Picker.SelectedIndex>0</Picker.SelectedIndex>
+            </Picker>
+            <Label x:Name="pedagogie" Text="Pédagogie" Grid.Column="0" Grid.Row="5"/>
+            <Picker x:Name="NotePedagogie" Title="choisir la note" Grid.Column="1" Grid.Row="5" SelectedIndex="0">
+                <Picker.Items>
+                    <x:String>0</x:String>
+                    <x:String>1</x:String>
+                    <x:String>2</x:String>
+                    <x:String>3</x:String>
+                    <x:String>4</x:String>
+                    <x:String>5</x:String>
+                    <x:String>6</x:String>
+                    <x:String>7</x:String>
+                    <x:String>8</x:String>
+                    <x:String>9</x:String>
+                    <x:String>10</x:String>
+                </Picker.Items>
+                <Picker.SelectedIndex>0</Picker.SelectedIndex>
+            </Picker>
+            <Label x:Name="relationnel" Text="Relationnel" Grid.Column="0" Grid.Row="6"/>
+            <Picker x:Name="NoteRelationnel" Title="choisir la note" Grid.Column="1" Grid.Row="6">
+                <Picker.Items>
+                    <x:String>0</x:String>
+                    <x:String>1</x:String>
+                    <x:String>2</x:String>
+                    <x:String>3</x:String>
+                    <x:String>4</x:String>
+                    <x:String>5</x:String>
+                    <x:String>6</x:String>
+                    <x:String>7</x:String>
+                    <x:String>8</x:String>
+                    <x:String>9</x:String>
+                    <x:String>10</x:String>
+                </Picker.Items>
+                <Picker.SelectedIndex>0</Picker.SelectedIndex>
+            </Picker>
+            <Button x:Name="envoyer" Text="Envoyer" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" HorizontalOptions="Center" Clicked="Button_Clicked"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

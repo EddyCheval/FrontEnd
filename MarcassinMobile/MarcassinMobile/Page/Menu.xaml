@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MarcassinMobile.Page.Menu"
+             BackgroundColor="White">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.10*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.10*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="0.75*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="#DDF2FF" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3">
+            <Label VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1" Grid.Row="1" FontAttributes="Bold" TextColor="#273747" Text="Votre Profil :" HorizontalTextAlignment="Center" Font="30"/>
+
+            <ContentView>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.10*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.10*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <!--Nom et Prénom-->
+                        <RowDefinition Height="*"/>
+                        <!--Adresse Mail-->
+                        <RowDefinition Height="*"/>
+                        <!--Service et Entreprise-->
+                        <RowDefinition Height="*"/>
+                        <!--LienLinkedIn -->
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="Nom" Grid.Column="1" Grid.Row="1" FontAttributes="Bold" TextColor="#273747"/>
+                    <Label x:Name="Prenom" Grid.Column="2" Grid.Row="1" FontAttributes="Bold" TextColor="#273747"/>
+                    <Label x:Name="AdresseMail" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" FontAttributes="Bold" TextColor="#273747"/>
+                    <Label x:Name="Service" Grid.Column="2" Grid.Row="3" FontAttributes="Bold" TextColor="#273747"/>
+                    <Label x:Name="Entreprise" Grid.Column="1" Grid.Row="3" FontAttributes="Bold" TextColor="#273747"/>
+                    <Label x:Name="LienLinkedIn" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" FontAttributes="Bold" TextColor="#273747"/>
+                </Grid>
+            </ContentView>
+        </StackLayout>
+        <ListView Grid.Row="3" Grid.Column="1" x:Name="listView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10,5,10,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="48"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="38" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="1"
+                     Text="{Binding Name}" TextColor="#FCA324"
+                     VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

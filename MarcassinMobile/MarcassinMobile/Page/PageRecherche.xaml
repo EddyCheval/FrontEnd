@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MarcassinMobile.Page.PageRecherche"
+             xmlns:Custom="clr-namespace:MarcassinMobile.Utilitaire"
+             BackgroundColor="#ecf0f1">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.15*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0.15*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.15*"/>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="8*"/>
+                    <RowDefinition Height="0.15*"/>
+                </Grid.RowDefinitions>
+
+                <Label x:Name="titre" Text="Recherche"
+               VerticalTextAlignment="Center" HorizontalTextAlignment="Center" 
+                   Font="30" TextColor="#FCA324" 
+                   Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
+                <Custom:CustomEntry x:Name="SearchEntry" CustomBorderColor="#FCA324" CustomBorderWidth="5" CustomCornerRadius="5" IsCurvedCornersEnabled="True" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
+                <Custom:BoutonPerso x:Name="SearchButton" Clicked="SearchButton_Clicked"  Grid.Column="2" Grid.Row="3" Text="Rechercher" TextColor="#FCA324" CustomBackgroundColor="#ecf0f1" CustomBorderRadius="10" CustomBorderWidth="5" CustomBorderColor="#FCA324"/>
+                <Picker x:Name="SearchPicker" SelectedIndexChanged="SearchPicker_SelectedIndexChanged" TextColor="#FCA324" Grid.Column="1" Grid.Row="3">
+                    <Picker.Items>
+                        <x:String>Competence</x:String>
+                        <x:String>Employe</x:String>
+                        <x:String>Groupe</x:String>
+                    </Picker.Items>
+                    <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                </Picker>
+                <ListView x:Name="SearchViewEmploye" ItemSelected="SearchViewEmploye_ItemSelected" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,15,0,0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Custom:CustomViewCell SelectedBackgroundColor="#FCA324">
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <!--Nom Prénom-->
+                                            <RowDefinition Height="*" />
+                                            <!--Entreprise Service Métier-->
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" Text="{Binding nom}"/>
+                                        <Label FontAttributes="Bold" Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Center" Text="{Binding prenom}"/>
+                                        <Label Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center" Text="{Binding entreprise}"/>
+                                        <Label Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center" Text="{Binding service}"/>
+                                        <Label Grid.Column="2" Grid.Row="1" HorizontalTextAlignment="Center" Text="{Binding metier}"/>
+                                    </Grid>
+                                </ViewCell.View>
+                            </Custom:CustomViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <ListView x:Name="SearchViewCompetence" ItemSelected="SearchViewCompetence_ItemSelected" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,15,0,0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Custom:CustomViewCell SelectedBackgroundColor="#FCA324">
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <!--Titre-->
+                                            <RowDefinition Height="*"/>
+                                            <!--Intitule-->
+                                            <RowDefinition  Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" Text="{Binding intitule}"/>
+                                        <Label FontAttributes="Italic" Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Center" Text="{Binding Competence.annee}"/>
+                                        <Label Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center" Text="{Binding description}"/>
+                                    </Grid>
+                                </ViewCell.View>
+                            </Custom:CustomViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <ListView x:Name="SearchViewGroupe" ItemSelected="SearchViewGroupe_ItemSelected" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,15,0,0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Custom:CustomViewCell SelectedBackgroundColor="#FCA324">
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <!--Titre-->
+                                            <RowDefinition />
+                                            <!--Intitule-->
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="0" Text="{Binding titre}" />
+                                        <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Competence.IntituleCompetences[0].intitule}" x:Name="Competence" />
+                                        <Label FontAttributes="Italic" Grid.Column="1" Grid.Row="0" Text="{Binding dateReunion}"/>
+                                    </Grid>
+                                </ViewCell.View>
+                            </Custom:CustomViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

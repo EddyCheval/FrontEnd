@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{E9A1AF2B-8583-4C87-9D09-0FA6A7E72E67}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>MarcassinMobile</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)JSONObject\JSCompetence.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JSONObject\JSCount.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JSONObject\JSDemande.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JSONObject\JSEmploye.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JSONObject\JSGroupe.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JSONObject\JSIntituleCompetence.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JSONObject\JSLangue.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JSONObject\JSLanguePossede.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JSONObject\JSLiaisonCompetence.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JSONObject\JSMembre.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JSONObject\JSMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JSONObject\JSNote.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MenuItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\AffichageCompetence.xaml.cs">
+      <DependentUpon>AffichageCompetence.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\AffichageGroupe.xaml.cs">
+      <DependentUpon>AffichageGroupe.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\CreationGroupe.xaml.cs">
+      <DependentUpon>CreationGroupe.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\GraphiqueCompetence.xaml.cs">
+      <DependentUpon>GraphiqueCompetence.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\LesDemandes.xaml.cs">
+      <DependentUpon>LesDemandes.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\ListNote.xaml.cs">
+      <DependentUpon>ListNote.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\MasterDetail.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Page\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\MessagerieGroupe.xaml.cs">
+      <DependentUpon>MessagerieGroupe.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\NoteCompetence.xaml.cs">
+      <DependentUpon>NoteCompetence.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\PageConnexion.xaml.cs">
+      <DependentUpon>PageConnexion.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\PageDemande.xaml.cs">
+      <DependentUpon>PageDemande.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\PageNote.xaml.cs">
+      <DependentUpon>PageNote.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\PageRecherche.xaml.cs">
+      <DependentUpon>PageRecherche.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\Profil.xaml.cs">
+      <DependentUpon>Profil.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\RechercheTuteur.xaml.cs">
+      <DependentUpon>RechercheTuteur.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Page\SelectionGroupe.xaml.cs">
+      <DependentUpon>SelectionGroupe.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Utilitaire\BoutonPerso.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilitaire\CustomEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilitaire\CustomStackLayout.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilitaire\CustomViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilitaire\HttpRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilitaire\ImageResourceExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilitaire\MessageViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilitaire\ObservableCollectionConvert.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilitaire\RatingStar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilitaire\Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\MessagerieGroupe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\PageConnexion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Ressource\MyResources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\Profil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Ressource\Image\rating_star_half.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Ressource\Image\rating_star_half@2x.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Ressource\Image\rating_star_off.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Ressource\Image\rating_star_off@2x.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Ressource\Image\rating_star_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\AffichageGroupe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\GraphiqueCompetence.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\PageRecherche.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\AffichageCompetence.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\ListNote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\NoteCompetence.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\SelectionGroupe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\PageNote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\CreationGroupe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\LesDemandes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\PageDemande.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Page\RechercheTuteur.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

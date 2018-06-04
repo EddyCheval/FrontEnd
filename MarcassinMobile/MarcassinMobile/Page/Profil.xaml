@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MarcassinMobile.Page.Profil"
+             xmlns:Behavior="clr-namespace:MarcassinMobile.Utilitaire"
+             xmlns:Test="clr-namespace:MarcassinMobile.Utilitaire"
+             xmlns:local="MarcassinMobile.Page">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.10*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.10*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <!--Bandeau Supérieur-->
+                <RowDefinition Height="0.15*"/>
+                <RowDefinition Height="0.75*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.25*"/>
+                <!-- Scroll pour les différents éléments -->
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <!--Nom et Prenom-->
+                    <RowDefinition Height="*"/>
+                    <!--AdresseMail-->
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <!--Nom-->
+                    <ColumnDefinition Width="*"/>
+                    <!-- Prenom-->
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                    <Label FontAttributes="Bold" Text="Nom :" />
+                    <Label x:Name="Nom" />
+                </StackLayout>
+                <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                    <Label  FontAttributes="Bold" Text="Prenom :"/>
+                    <Label x:Name="Prenom"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                    <Label FontAttributes="Bold" Text="Adresse Mail :" />
+                    <Label x:Name="Adresse"/>
+                </StackLayout>
+            </Grid>
+
+            <Behavior:CustomStackLayout VerticalOptions="Start" CustomBorderColor="#FCA324" CustomBorderRadius="4" Padding="2" CustomBorderWidth="2" Orientation="Horizontal" Margin="10,0,10,0" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="2">
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label HorizontalTextAlignment="Center" TextColor="#FCA324" FontAttributes="Bold" x:Name="BtnGeneral" Text="Général" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView x:Name="BtnGBox" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" HeightRequest="2" WidthRequest="45" BackgroundColor="#FCA324" Grid.Column="0" Grid.Row="1"/>
+
+                    <BoxView VerticalOptions="FillAndExpand" WidthRequest="2" BackgroundColor="#FCA324" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"/>
+                    <Label HorizontalTextAlignment="Center" TextColor="#FCA324" FontAttributes="Bold" x:Name="BtnCompetence" Text="Compétence" Grid.Column="2" Grid.Row="0" Grid.RowSpan="2">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView x:Name="BtnCBox" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" HeightRequest="2" WidthRequest="45" BackgroundColor="#FCA324" Grid.Column="2" Grid.Row="1"/>
+
+                    <BoxView  VerticalOptions="FillAndExpand" WidthRequest="2" BackgroundColor="#FCA324" Grid.Column="3" Grid.Row="0" Grid.RowSpan="2"/>
+                    <Label HorizontalTextAlignment="Center" TextColor="#FCA324" FontAttributes="Bold" x:Name="BtnGroupe" Text="Réunion" Grid.Column="4" Grid.Row="0" Grid.RowSpan="2">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView x:Name="BtnRBox" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" HeightRequest="2" WidthRequest="45" BackgroundColor="#FCA324" Grid.Column="4" Grid.Row="1"/>
+                </Grid>
+
+            </Behavior:CustomStackLayout>
+            <!-- <Label Grid.Column="0" Grid.Row="1" x:Name="htmlTest"/>-->
+
+            <ScrollView  Grid.Column="1" Grid.Row="4" IsVisible="True" x:Name="CntPGeneral" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <!--Metier-->
+                        <RowDefinition Height="40"/>
+                        <!--Service-->
+                        <RowDefinition Height="40"/>
+                        <!--Entreprise-->
+                        <RowDefinition Height="80"/>
+                        <!--Status-->
+                        <RowDefinition Height="*"/>
+                        <!--LienLinkedIn WebView ?-->
+                    </Grid.RowDefinitions>
+                    <Label FontAttributes="Bold" Text="Metier :"  Grid.Column="0" Grid.Row="0"/>
+                    <Label x:Name="Metier"  Grid.Column="1" Grid.Row="0"/>
+                    <Label FontAttributes="Bold" Text="Entreprise :" Grid.Column="0" Grid.Row="1"/>
+                    <Label x:Name="Entreprise" Grid.Column="1" Grid.Row="1"/>
+                    <Label FontAttributes="Bold" Text="Service :" Grid.Column="0" Grid.Row="2" />
+                    <Label x:Name="Service" Grid.Column="1" Grid.Row="2"/>
+                    <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="0" Text="Est Administrateur :" />
+                        <Switch Grid.Column="1" Grid.Row="0" x:Name="EstAdmin" IsEnabled="False" />
+                        <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="Est Chef de service :" />
+                        <Switch Grid.Column="1" Grid.Row="1" x:Name="EstChef" IsEnabled="False" />
+                        <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="2" Text="Est Interne à Marcassin :" />
+                        <Switch Grid.Column="1" Grid.Row="2" x:Name="EstInterne" IsEnabled="False" />
+                    </Grid>
+                    <Label FontAttributes="Bold" Text="LinkedIn :" Grid.Column="0" Grid.Row="4" />
+                    <Label x:Name="LinkedIn" Grid.Column="1" Grid.Row="4"/>
+                </Grid>
+            </ScrollView>
+
+            <ScrollView x:Name="CntPCompetence" Grid.Column="1" Grid.Row="4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="False">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="9*"/>
+                    </Grid.RowDefinitions>
+                    <Label FontAttributes="Bold" Grid.Row="0" Grid.Column="0" Text="Compétences Possédées :"/>
+                    <ListView Grid.Column="0" Grid.Row="1" x:Name="ListViewComp">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Grid>
+                                            <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                                            </Grid.GestureRecognizers>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="3*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="0" x:Name="IntituleCompetences" Text="{Binding Competence.IntituleCompetences[0].description}"/>
+                                            <Switch Grid.Column="1" Grid.Row="1" x:Name="EstTutorant" Toggled="EstTutorant_Toggled" IsToggled="{Binding estTutorant}" />
+                                            <Label  Grid.Column="0" Grid.Row="1" x:Name="DescriptionCompetences" Text="{Binding Competence.IntituleCompetences[0].intitule}" />
+                                            <Grid Grid.Column="1" Grid.Row="0">
+                                                <Grid.Behaviors>
+                                                    <Behavior:StarBehavior x:Name="starOne" GroupName="myStar"/>
+                                                </Grid.Behaviors>
+                                                <Image x:Name="starBlankTwo"
+                                                        Source="{Test:ImageResource MarcassinMobile.Ressource.Image.rating_star_on.png}" />
+                                            </Grid>
+                                        </Grid>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </ScrollView>
+
+            <ListView  x:Name="CntPGroupe" Grid.Column="1" Grid.Row="4" HorizontalOptions="FillAndExpand" IsVisible="False">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid x:Name="GridReunion">
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_GridReunion"/>
+                                    </Grid.GestureRecognizers>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <!-- Résultat trier par date-->
+                                    <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="0" Text="{Binding Groupe.titre}" x:Name="Titre" />
+                                    <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding Groupe.Competence.IntituleCompetences[0].intitule}" x:Name="Competence" />
+                                    <Label FontAttributes="Italic" Grid.Column="1" Grid.Row="0" Text="{Binding Groupe.dateReunion}" x:Name="Date" />
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

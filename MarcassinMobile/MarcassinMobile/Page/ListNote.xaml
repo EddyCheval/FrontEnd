@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MarcassinMobile.Page.ListNote"
+             xmlns:Custom="clr-namespace:MarcassinMobile.Utilitaire"
+             BackgroundColor="#ecf0f1">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Voici les notes reçues :"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" Font="24" TextColor="#FCA324" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.15*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.15*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Center" TextColor="#FCA324" FontAttributes="Bold" x:Name="NomTitre" Text="Nom"/>
+                <Label Grid.Column="2" Grid.Row="0" HorizontalTextAlignment="Center" TextColor="#FCA324" FontAttributes="Bold" x:Name="PrenomTitre"  Text="Prénom"/>
+                <Label Grid.Column="3" Grid.Row="0" HorizontalTextAlignment="Center" TextColor="#FCA324" FontAttributes="Bold" x:Name="NoteTitre" Text="Note"/>
+            </Grid>
+            <ListView x:Name="notes" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    </Grid.GestureRecognizers>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.15*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="0.5*"/>
+                                        <ColumnDefinition Width="0.15*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="Nom" Text="{Binding tutore.nom}"/>
+                                    <Label Grid.Column="2" Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="Prenom"  Text="{Binding tutore.prenom}"/>
+                                    <Label Grid.Column="3" Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="Note" Text="{Binding note}"/>
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

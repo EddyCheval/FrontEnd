@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:View="clr-namespace:MarcassinMobile.Utilitaire"
+             x:Class="MarcassinMobile.Page.MessagerieGroupe"
+             BackgroundColor="#ecf0f1">
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+            <ListView x:Name="ListMessages">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <View:MessageViewCell Name="{Binding Employe.prenom}" Contenu="{Binding contenu}" Date="{Binding date}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <View:CustomEntry x:Name="MessageEntry" CustomBorderColor="#FCA324" CustomBorderWidth="2" CustomCornerRadius="15" IsCurvedCornersEnabled="True" Placeholder="Entrez votre message"/>
+            <View:BoutonPerso Text="Button" Clicked="Button_Clicked" TextColor="#FCA324" CustomBackgroundColor="#ecf0f1" CustomBorderRadius="10" CustomBorderWidth="5" CustomBorderColor="#FCA324"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

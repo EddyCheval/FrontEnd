@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MarcassinMobile.Page.AffichageCompetence"
+             xmlns:Custom="clr-namespace:MarcassinMobile.Utilitaire"
+             BackgroundColor="#ecf0f1">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.15*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.15*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.15*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.15*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Libellé de la Compétence :" FontAttributes="Bold" TextColor="#FCA324" Grid.Column="1"  Grid.Row="1"/>
+            <Label x:Name="Intitule" Grid.Column="2" Grid.Row="1"/>
+            <Label Text="Description :" FontAttributes="Bold" TextColor="#FCA324" Grid.Column="1" Grid.Row="2"/>
+            <Label x:Name="Description" Grid.Column="2" Grid.Row="2"/>
+
+            <WebView x:Name="WebView" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" VerticalOptions="FillAndExpand"/>
+            <Custom:BoutonPerso x:Name="Detail" Text="Détails une demande" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Clicked="Detail_Clicked" TextColor="#FCA324" CustomBackgroundColor="#ecf0f1" CustomBorderRadius="10" CustomBorderWidth="5" CustomBorderColor="#FCA324"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

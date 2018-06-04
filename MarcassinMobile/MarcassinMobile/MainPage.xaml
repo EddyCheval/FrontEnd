@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MarcassinMobile"
+             x:Class="MarcassinMobile.MainPage">
+
+    <StackLayout>
+        <Label x:Name="label" Text="Welcome to Xamarin.Forms!" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" HeightRequest="200" WidthRequest="200" />
+        <Label x:Name="labelLanguePossede" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+        <Label x:Name="labelLangue" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center" />
+        <Button WidthRequest="50" HeightRequest="50"  Clicked="mButton_Clicked" Text="Button"/>
+        <Entry x:Name="entry" />
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MarcassinMobile.Page.LesDemandes">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.12*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.4*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.1*"/>
+                    <ColumnDefinition Width="0.45*"/>
+                    <ColumnDefinition Width="0.45*"/>
+                    <ColumnDefinition Width="0.1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Demandes" x:Name="Demandes" IsVisible="True" Grid.Column="1" Grid.Row="0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Mes Demandes" x:Name="MesDemandes" IsVisible="True" Grid.Column="2" Grid.Row="0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <ScrollView Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2" IsVisible="True" x:Name="scrollDemandes" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.1*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.1*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="Liste des demandes"  Grid.Column="1" Grid.Row="0"/>
+                        <ListView x:Name="ListDemandes" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ViewCell.View>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Label Grid.Column="0" x:Name="nomEmploye" Text="{Binding Employe.nom}"/>
+                                                <Label Grid.Column="1" x:Name="prenomEmploye" Text="{Binding Employe.prenom}"/>
+                                                <Label Grid.Column="2" x:Name="competence" Text="{Binding Competence.IntituleCompetences[0].intitule}"/>
+                                            </Grid>
+                                        </ViewCell.View>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </ScrollView>
+
+                <ScrollView Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2" IsVisible="False" x:Name="scrollMesDemandes" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.1*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition Height="0.1*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="Demande de tutorat"  Grid.Column="1" Grid.Row="0"/>
+                        <ListView x:Name="ListDemandeTutorat" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ViewCell.View>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Label Grid.Column="0" x:Name="nomEmploye" Text="{Binding Employe.nom}"/>
+                                                <Label Grid.Column="1" x:Name="prenomEmploye" Text="{Binding Employe.prenom}"/>
+                                                <Label Grid.Column="2" x:Name="competence" Text="{Binding Competence.IntituleCompetences[0].intitule}"/>
+                                            </Grid>
+                                        </ViewCell.View>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </ScrollView>
+                <Button x:Name="CreateGroupe" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="3" Text="Créer un groupe" Clicked="CreateGroupe_Clicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

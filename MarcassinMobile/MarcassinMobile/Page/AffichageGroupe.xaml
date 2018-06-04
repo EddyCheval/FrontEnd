@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Behavior="clr-namespace:MarcassinMobile.Utilitaire"
+             x:Class="MarcassinMobile.Page.AffichageGroupe">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0" x:Name="AvecModif">
+                <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <!--Titre-->
+                    <RowDefinition Height="0.5*" />
+                        <!--Competence-->
+                    <RowDefinition Height="*" />
+                        <!--Membre-->
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="0.5*" />
+                </Grid.RowDefinitions>
+                <Label Text="Titre" Grid.Row="0" Grid.Column="0"/>
+                <Entry x:Name="ModifTitre" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <StackLayout Grid.Row="1" Grid.Column="0" >
+                    <Label Text="Competence :"/>
+                    <Label x:Name="IntituleCompActuel" />
+                    <Label x:Name="DescriptionCompActuel"/>
+                </StackLayout>
+
+                <ListView x:Name="ModifCompetence" ItemSelected="ModifCompetence_ItemSelected" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Behavior:CustomViewCell SelectedBackgroundColor="Gainsboro">
+                                <Behavior:CustomViewCell.View>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Column="0" Grid.Row="0" Text="{Binding intitule}"/>
+                                        <Label Grid.Column="0" Grid.Row="1" Text="{Binding description}"/>
+                                    </Grid>
+                                </Behavior:CustomViewCell.View>
+                            </Behavior:CustomViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <ListView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" x:Name="ListEmploye" ItemSelected="ListEmploye_ItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <!--Nom Prénom-->
+                                                <RowDefinition />
+                                                <!--Entreprise Service Métier-->
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                            <Label Grid.Column="0" Grid.Row="0" Text="{Binding nom}"/>
+                                            <Label Grid.Column="1" Grid.Row="0" Text="{Binding prenom}"/>
+                                            <Label Grid.Column="0" Grid.Row="1" Text="{Binding entreprise}"/>
+                                            <Label Grid.Column="1" Grid.Row="1" Text="{Binding service}"/>
+                                        <Label Grid.Column="2" Grid.Row="1" Text="{Binding metier}"/>
+                                    </Grid>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                </ListView>
+                <ListView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" x:Name="ModifListParticipant" ItemSelected="ModifListParticipant_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <!--Nom Prénom-->
+                                            <RowDefinition />
+                                            <!--Entreprise Service Métier-->
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Column="0" Grid.Row="0" Text="{Binding nom}"/>
+                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding prenom}"/>
+                                        <Label Grid.Column="0" Grid.Row="1" Text="{Binding entreprise}"/>
+                                        <Label Grid.Column="1" Grid.Row="1" Text="{Binding service}"/>
+                                        <Label Grid.Column="2" Grid.Row="1" Text="{Binding metier}"/>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button x:Name="ConfirmModif" Clicked="ConfirmModif_Clicked" Text="Enregistrer" Grid.Column="0" Grid.Row="4"/>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="0" x:Name="SansModif" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <!--Titre-->
+                    <RowDefinition Height="*"/>
+                    <!--Competence-->
+                    <RowDefinition Height="*"/>
+                    <!--Tuteur-->
+                    <RowDefinition Height="*"/>
+                    <!--Membre-->
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="ModifierBtn" Clicked="ModifierBtn_Clicked" Text="Modifier" Grid.Column="1" Grid.Row="0"/>
+                <Label x:Name="Titre" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Large"/>
+                <StackLayout Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" >
+                <Label  Text="Compétence Enseignée :"/>
+                    <Label x:Name="Competence"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" x:Name="Tuteur" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Tuteur_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="Tuteur :" FontAttributes="Bold"/>
+                    <Label Text="{Binding nom}"/>
+                    <Label Text="{Binding prenom}"/>
+            </StackLayout>
+                <ListView x:Name="ListMembreVue"  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" ItemSelected="TapGestureRecognizer_Tapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <!--Nom Prénom-->
+                                            <RowDefinition Height="*"/>
+                                            <!--Entreprise Service Métier-->
+                                            <RowDefinition  Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Column="0" Grid.Row="0" Text="{Binding Source=nom}"/>
+                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding Source=prenom}"/>
+                                        <Label Grid.Column="0" Grid.Row="1" Text="{Binding Source=entreprise}"/>
+                                        <Label Grid.Column="1" Grid.Row="1" Text="{Binding Source=service}"/>
+                                        <Label Grid.Column="2" Grid.Row="1" Text="{Binding Source=metier}"/>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Text="Messagerie" x:Name="BtnMessagerie"  Clicked="BtnMessagerie_Clicked"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcassinMobile.Android", "MarcassinMobile\MarcassinMobile.Android\MarcassinMobile.Android.csproj", "{DDB141B8-14D2-4EAF-AF99-B97331682964}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MarcassinMobile", "MarcassinMobile\MarcassinMobile\MarcassinMobile.shproj", "{E9A1AF2B-8583-4C87-9D09-0FA6A7E72E67}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		MarcassinMobile\MarcassinMobile\MarcassinMobile.projitems*{ddb141b8-14d2-4eaf-af99-b97331682964}*SharedItemsImports = 4
+		MarcassinMobile\MarcassinMobile\MarcassinMobile.projitems*{e9a1af2b-8583-4c87-9d09-0fa6a7e72e67}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDB141B8-14D2-4EAF-AF99-B97331682964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDB141B8-14D2-4EAF-AF99-B97331682964}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDB141B8-14D2-4EAF-AF99-B97331682964}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DDB141B8-14D2-4EAF-AF99-B97331682964}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDB141B8-14D2-4EAF-AF99-B97331682964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDB141B8-14D2-4EAF-AF99-B97331682964}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4FD0A97-A710-4D66-A9C2-28D93F4B3012}
+	EndGlobalSection
+EndGlobal
