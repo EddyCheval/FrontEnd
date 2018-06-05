@@ -55,7 +55,7 @@ namespace MarcassinMobile.Page {
         private global::Xamarin.Forms.Picker NoteRelationnel;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button envoyer;
+        private global::MarcassinMobile.Utilitaire.BoutonPerso envoyer;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
@@ -73,7 +73,7 @@ namespace MarcassinMobile.Page {
             NotePedagogie = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "NotePedagogie");
             relationnel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "relationnel");
             NoteRelationnel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "NoteRelationnel");
-            envoyer = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "envoyer");
+            envoyer = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MarcassinMobile.Utilitaire.BoutonPerso>(this, "envoyer");
         }
     }
 }

@@ -24,3 +24,7 @@ Xamarin.Android.Support.v7.MediaRouter
 Xamarin.Android.Support.v7.Palette
 Xamarin.Android.Support.v7.RecyclerView
 Xamarin.Android.Support.Vector.Drawable
+Engine.IO.Client
+Socket.IO.Client
+Square.OkHttp3
+Square.OkIO

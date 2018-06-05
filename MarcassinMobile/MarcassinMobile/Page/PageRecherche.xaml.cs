@@ -83,7 +83,6 @@ namespace MarcassinMobile.Page
         }
         private async void SearchViewCompetence_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine(((JSIntituleCompetence)SearchViewCompetence.SelectedItem).Competence.annee);
             await Navigation.PushAsync(new GraphiqueCompetence(((JSIntituleCompetence)SearchViewCompetence.SelectedItem)));
         }
     }

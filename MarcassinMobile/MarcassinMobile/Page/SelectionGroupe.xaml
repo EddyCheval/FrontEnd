@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MarcassinMobile.Page.SelectionGroupe">
+             x:Class="MarcassinMobile.Page.SelectionGroupe"
+             xmlns:Custom="clr-namespace:MarcassinMobile.Utilitaire">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Selection du groupe"
@@ -21,7 +22,7 @@
                                         <RowDefinition Height="2*"/>
                                         <RowDefinition Height="1.5*"/>
                                     </Grid.RowDefinitions>
-                                    <Label Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" Font="16" Text="{Binding Groupe.titre}"/>
+                                    <Label Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" TextColor="#FCA324" FontAttributes="Bold" Font="16" Text="{Binding Groupe.titre}"/>
                                     <Label Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center" TextColor="Gray" Text="{Binding Groupe.dateReunion}"/>
                                 </Grid>
                             </ViewCell.View>

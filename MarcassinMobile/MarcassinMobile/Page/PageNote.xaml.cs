@@ -47,24 +47,33 @@ namespace MarcassinMobile.Page
             System.Diagnostics.Debug.WriteLine(App.Url + "api/Membres?filter[include][employe]&filter[where][EstTutorant]=true&filter[where][Id_Groupe]=" + groupe.id_Groupe);
             if (Tuteur.Count() > 0)
             {
-                if (!(groupe.Competence is null)){
-                    if (groupe.Competence.IntituleCompetences.Where(c => c.id_Langue == Settings.ActualLanguage).Count() >= 1)
+                if (Tuteur.FirstOrDefault().id_Employe != Settings.ActualUser.id_Employe)
+                {
+                    if (!(groupe.Competence is null))
                     {
-                        Competence.Text = groupe.Competence.IntituleCompetences.Where(c => c.id_Langue == Settings.ActualLanguage).First().intitule;
+                        if (groupe.Competence.IntituleCompetences.Where(c => c.id_Langue == Settings.ActualLanguage).Count() >= 1)
+                        {
+                            Competence.Text = groupe.Competence.IntituleCompetences.Where(c => c.id_Langue == Settings.ActualLanguage).First().intitule;
+                        }
                     }
+                    else
+                    {
+                        Competence.Text = "Compétence";
+                    }
+                    Employe.Text = Tuteur.First().Employe.nom + " " + Tuteur.First().Employe.prenom;
+
+                    VerifNote();
                 }
                 else
                 {
-                    Competence.Text = "Compétence";
+                    await DisplayAlert("Vous êtes Tuteur de ce groupe", "Retour à la selection", "ok");
+                    await Navigation.PopAsync();
                 }
-                Employe.Text = Tuteur.First().Employe.nom + " " + Tuteur.First().Employe.prenom;
-
-                VerifNote();
             }
             else
             {
                 await DisplayAlert("Absence de Tuteur", "Retour à la selection", "ok");
-                await Navigation.PushAsync(new SelectionGroupe());
+                await Navigation.PopAsync();
 
             }
         }

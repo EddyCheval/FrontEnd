@@ -17,6 +17,9 @@ namespace MarcassinMobile.Page
 		public PageConnexion ()
 		{
 			InitializeComponent ();
+
+            NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetHasBackButton(this, false);
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -26,13 +29,14 @@ namespace MarcassinMobile.Page
             if (MDP != null & Id != null)
             {
                 MDP = HttpRequest.ComputeSha256Hash(MDP);
+                Id = HttpRequest.ComputeSha256Hash(Id);
                 try
                 {
                     var request = await HttpRequest.getRequest(App.Url+"api/Employes/count?[where][and][1][MotDePasse]=" + MDP + "&[where][and][0][Identifiant]=" + Id);
                     var val = JsonConvert.DeserializeObject<JSCount>(request);
                     if (val.Count == 0)
                     {
-                        await DisplayAlert("WOW", "Aucun compte associé ","ok");
+                        await DisplayAlert("Erreur", "Aucun compte associé ","ok");
                     }
                     else if(val.Count == 1)
                     {
@@ -42,7 +46,7 @@ namespace MarcassinMobile.Page
                         var Des = JsonConvert.DeserializeObject<List<JSEmploye>>(requestReception);
                         System.Diagnostics.Debug.WriteLine(requestReception);
                         Settings.ActualUser = Des.First();
-                        await DisplayAlert("WOW", "Connexion Effectué de "+ Settings.ActualUser.prenom + Settings.ActualUser.nom+" " + Des.First().id_Employe, "ok");
+                        await DisplayAlert("Confirmation", "Connexion Effectué de "+ Settings.ActualUser.prenom + Settings.ActualUser.nom+" " + Des.First().id_Employe, "ok");
                         
                         Settings.ActualLanguage = 2;
                         
@@ -56,7 +60,7 @@ namespace MarcassinMobile.Page
                 }
                 catch(Exception error)
                 {
-                    await DisplayAlert("AH là ou au-k bar", "Erreur lors de la connexion :"+error, "ok", "HOLYSHIT");
+                    await DisplayAlert("Erreur", "Erreur lors de la connexion :"+error, "ok");
                 }
             }
         }

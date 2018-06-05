@@ -43,5 +43,9 @@
     <Jar>obj\Release\lp\23\jl\bin\classes.jar</Jar>
     <Jar>obj\Release\lp\24\jl\bin\classes.jar</Jar>
     <Jar>obj\Release\lp\25\jl\bin\classes.jar</Jar>
+    <Jar>obj\Release\lp\26\jl\engine.io-client.jar</Jar>
+    <Jar>obj\Release\lp\27\jl\socket.io-client.jar</Jar>
+    <Jar>obj\Release\lp\28\jl\okhttp3.jar</Jar>
+    <Jar>obj\Release\lp\29\jl\okio.jar</Jar>
   </Jars>
 </Paths>

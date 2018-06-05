@@ -16,7 +16,7 @@ namespace MarcassinMobile.Page {
     public partial class CreationGroupe : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Entry Titre;
+        private global::MarcassinMobile.Utilitaire.CustomEntry Titre;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label IntituleCompActuel;
@@ -37,19 +37,19 @@ namespace MarcassinMobile.Page {
         private global::Xamarin.Forms.ListView ListParticipant;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button Confirm;
+        private global::MarcassinMobile.Utilitaire.BoutonPerso Confirm;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(CreationGroupe));
-            Titre = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "Titre");
+            Titre = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MarcassinMobile.Utilitaire.CustomEntry>(this, "Titre");
             IntituleCompActuel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "IntituleCompActuel");
             DescriptionCompActuel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "DescriptionCompActuel");
             DateReunion = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.DatePicker>(this, "DateReunion");
             Competence = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "Competence");
             ListEmploye = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "ListEmploye");
             ListParticipant = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "ListParticipant");
-            Confirm = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "Confirm");
+            Confirm = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MarcassinMobile.Utilitaire.BoutonPerso>(this, "Confirm");
         }
     }
 }

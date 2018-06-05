@@ -17,7 +17,6 @@ namespace MarcassinMobile.Page
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RechercheTuteur : ContentPage
     {
-        private ObservableCollection<JSEmploye> ListTuteur;
         private ObservableCollection<JSLiaisonCompetence> ListLiaisonCompetenceSelected;
         JSIntituleCompetence competence = new JSIntituleCompetence();
         public RechercheTuteur(JSIntituleCompetence competence)
@@ -33,28 +32,45 @@ namespace MarcassinMobile.Page
             var id_competence = competence.id_Competence;
             var req = await HttpRequest.getRequest(App.Url + "api/LiaisonCompetences?filter[where][Id_Competence]=" + id_competence + "&filter[where][EstTutorant]=true&filter[include][employe][NotesTuteur]");
             List<JSLiaisonCompetence> jS = JsonConvert.DeserializeObject<List<JSLiaisonCompetence>>(req);
-            ListLiaisonCompetenceSelected = ObservableCollectionConvert.ObservableCollectionConvertion(jS);
-            foreach (var liaisonComp in ListLiaisonCompetenceSelected)
+            foreach (var liaisonComp in jS)
             {
                 try
                 {
-                    liaisonComp.note = (liaisonComp.Employe.note.Where(c => c.id_Competence == id_competence).First().note +
-                                        liaisonComp.Employe.note.Where(c => c.id_Competence == id_competence).First().noteCommunication +
-                                        liaisonComp.Employe.note.Where(c => c.id_Competence == id_competence).First().noteConnaissance +
-                                        liaisonComp.Employe.note.Where(c => c.id_Competence == id_competence).First().notePedagogie +
-                                        liaisonComp.Employe.note.Where(c => c.id_Competence == id_competence).First().noteRelationnel) / 5;
+                    var reqNote = await HttpRequest.getRequest(App.Url + "api/Notes?filter[where][Id_Tuteur]=" + liaisonComp.id_Employe + "&filter[where][Id_Competence]=" + liaisonComp.id_Competence);
+                    List<JSNote> jSNote = JsonConvert.DeserializeObject<List<JSNote>>(reqNote);
+                    var moyenne = 0;
+                    var compteur = 0;
+                    if (jSNote.Count() > 0)
+                    {
+                        foreach (var Note in jSNote)
+                        {
+                            var noteMoyenne = (Note.note + Note.noteCommunication + Note.noteConnaissance + Note.notePedagogie + Note.noteRelationnel) / 5;
+                            moyenne += noteMoyenne;
+                            compteur++;
+                        }
+                        moyenne = moyenne / compteur;
+                    }
+                    else
+                    {
+                        moyenne = 0;
+                    }
+                    liaisonComp.note = moyenne;
+
                 }
                 catch
                 {
                     liaisonComp.note = 0;
                 }
-            }
+                /* ListLiaisonCompetenceSelected.Remove(liaisonComp.Where(c => c.id_DuTuteur == Settings.ActualUser.id_Employe));*/
 
+            }
+            ListLiaisonCompetenceSelected = ObservableCollectionConvert.ObservableCollectionConvertion(jS);
             ListTuteurXAML.ItemsSource = ListLiaisonCompetenceSelected;
         }
 
         async private void Valider_Clicked(object sender, EventArgs e)
         {
+            var temoin = 0;
             JSLiaisonCompetence LiaisonComp = ((JSLiaisonCompetence)ListTuteurXAML.SelectedItem);
 
             JSDemande demande = new JSDemande
@@ -65,8 +81,29 @@ namespace MarcassinMobile.Page
                 id_Employe = Settings.ActualUser.id_Employe
             };
 
-            var req = await HttpRequest.postRequest(App.Url + "api/Demandes/", demande);
-            await Navigation.PushAsync(new PageDemande());
+            var reqDemande = await HttpRequest.getRequest(App.Url + "api/Demandes");
+            List<JSDemande> jS = JsonConvert.DeserializeObject<List<JSDemande>>(reqDemande);
+            var ListDemandeCheck = ObservableCollectionConvert.ObservableCollectionConvertion(jS);
+
+            foreach (var demandeCheck in ListDemandeCheck)
+            {
+                if (demande.id_Employe == demandeCheck.id_Employe && demande.id_Competence == demandeCheck.id_Competence)
+                {
+                    temoin = 1;
+                }
+            }
+            System.Diagnostics.Debug.WriteLine(temoin);
+            if (temoin == 0)
+            {
+                var req = await HttpRequest.postRequest(App.Url + "api/Demandes/", demande);
+                await Navigation.PushAsync(new PageDemande());
+            }
+            else
+            {
+                var req = await HttpRequest.postRequest(App.Url + "api/Demandes/update?where[Id_Employe]=" + demande.id_Employe + "&[Id_Competence]=" + demande.id_Competence, demande);
+                await Navigation.PushAsync(new PageDemande());
+            }
+
 
         }
     }

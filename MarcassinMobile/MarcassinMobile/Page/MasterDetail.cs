@@ -37,7 +37,7 @@ namespace MarcassinMobile.Page
                 }
             };
             Master = pageMenu;
-            var nav = new NavigationPage(new MainPage())
+            var nav = new NavigationPage(new PageRecherche())
             {
                 BarBackgroundColor = Color.FromHex("#B32F3150"),
                 BarTextColor = Color.White

@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MarcassinMobile.Page.CreationGroupe"
-             xmlns:Behavior="clr-namespace:MarcassinMobile.Utilitaire">
+             xmlns:Behavior="clr-namespace:MarcassinMobile.Utilitaire"
+             xmlns:Custom="clr-namespace:MarcassinMobile.Utilitaire">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -11,32 +12,40 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+
             <Grid Grid.Row="0" Grid.Column="0">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.15*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0.15*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="0.15*" />
                     <!--Titre-->
                     <RowDefinition Height="0.5*" />
                     <!--Competence-->
                     <RowDefinition Height="*" />
-                    <!--Membre-->
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
                     <RowDefinition Height="0.5*" />
+                    <!--Membre-->
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="0.8*" />
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="0.8*" />
+                    <RowDefinition Height="0.5*" />
+                    <RowDefinition Height="0.15*" />
                 </Grid.RowDefinitions>
-                <Label Text="Titre" Grid.Row="0" Grid.Column="0"/>
-                <Entry x:Name="Titre" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
-                <StackLayout Grid.Row="1" Grid.Column="0" >
-                    <Label Text="Competence :"/>
+                <Label Text="Titre" Grid.Row="1" Grid.Column="1" FontAttributes="Bold" TextColor="#FCA324"/>
+                <Custom:CustomEntry x:Name="Titre" Grid.Row="1" Grid.Column="2" CustomBorderColor="#FCA324" CustomBorderWidth="5" CustomCornerRadius="5" IsCurvedCornersEnabled="True"/>
+                <StackLayout Grid.Row="2" Grid.Column="1" >
+                    <Label Text="Competence :" FontAttributes="Bold" TextColor="#FCA324"/>
                     <Label x:Name="IntituleCompActuel" />
                     <Label x:Name="DescriptionCompActuel"/>
                 </StackLayout>
-                <DatePicker x:Name="DateReunion" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" />
+                <Label Text="Date de la réunion :" Grid.Row="3" Grid.Column="1" FontAttributes="Bold" TextColor="#FCA324"/>
+                <DatePicker x:Name="DateReunion" Grid.Row="3" Grid.Column="2"/>
 
-                <ListView x:Name="Competence" ItemSelected="Competence_ItemSelected" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                <ListView x:Name="Competence" ItemSelected="Competence_ItemSelected" Grid.Row="2" Grid.Column="2" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Behavior:CustomViewCell SelectedBackgroundColor="Gainsboro">
@@ -58,7 +67,8 @@
                     </ListView.ItemTemplate>
                 </ListView>
 
-                <ListView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" x:Name="ListEmploye" ItemSelected="ListEmploye_ItemSelected">
+                <Label Text="La liste des employés possible" TextColor="#FCA324" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4"/>
+                <ListView Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" x:Name="ListEmploye" ItemSelected="ListEmploye_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -86,7 +96,9 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <ListView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4" x:Name="ListParticipant" ItemSelected="ListParticipant_ItemSelected">
+
+                <Label Text="La liste des employés sélectionnés" TextColor="#FCA324" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6"/>
+                <ListView Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="7" x:Name="ListParticipant" ItemSelected="ListParticipant_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -114,7 +126,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Button x:Name="Confirm" Clicked="Confirm_Clicked" Text="Enregistrer" Grid.Column="0" Grid.Row="5"/>
+                <Custom:BoutonPerso x:Name="Confirm" Clicked="Confirm_Clicked" Text="Enregistrer" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="8" TextColor="#FCA324" CustomBorderRadius="10" CustomBorderWidth="5" CustomBorderColor="#FCA324"/>
             </Grid>
         </Grid>
     </ContentPage.Content>

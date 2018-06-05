@@ -24,6 +24,7 @@ namespace MarcassinMobile.Page
 		{
 			InitializeComponent ();
             JsIntCompetence = jSIntCompetence;
+          
             Intitule.Text = JsIntCompetence.intitule;
             Description.Text = JsIntCompetence.description;
             RecupNote();
@@ -44,12 +45,11 @@ namespace MarcassinMobile.Page
             }; ;
             WebView.Source = html;
             //htmlTest.Text = html;
-            System.Diagnostics.Debug.WriteLine(html);
         }
 
         private string GetHtmlWithChartConfig(string chartConfig)
         {
-            var chartDataNull = Estnote ? "" : "<p style=\"color:#999999;text-align:center;Margin-top:40vh;\"><i>Vous n'avez pas été noté !!</i></p>";
+            var chartDataNull = Estnote ? "" : "<p style=\"color:#999999;text-align:center;Margin-top:40vh;\"><i>La compétence n'a pas été notée !!</i></p>";
             var inlineStyle = "style=\"width:100%;height:97%;\"";
             var chartJsScript = !Estnote ? "" : "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js\"></script>";
             var chartConfigJsScript = !Estnote ? "" : $"<script>{chartConfig}</script>";
@@ -144,8 +144,6 @@ namespace MarcassinMobile.Page
         }
         private async void RecupNote()
         {
-            var req = await HttpRequest.getRequest(App.Url + "api/Notes?filter[where][Id_Competence]=" + JsIntCompetence.Competence.id_Competence + "&filter[include][Tutore]");
-            var reqdes = new List<JSNote>();
             var Notelist = new List<double>()
             {
                 0,
@@ -153,33 +151,45 @@ namespace MarcassinMobile.Page
                 0,
                 0,
                 0
-            };
-            if (req.Count() > 2)
-            {
-                //cahnger en double ?
-                reqdes = JsonConvert.DeserializeObject<List<JSNote>>(req);
-                foreach (var note in reqdes)
-                {
-                    Notelist[0] += note.note;
-                    Notelist[1] += note.noteRelationnel;
-                    Notelist[2] += note.noteConnaissance;
-                    Notelist[3] += note.noteCommunication;
-                    Notelist[4] += note.notePedagogie;
-                }
-                Estnote = true;
-                Notelist[0] = Notelist[0] / reqdes.Count();
-                Notelist[1] = Notelist[1] / reqdes.Count();
-                Notelist[2] = Notelist[2] / reqdes.Count();
-                Notelist[3] = Notelist[3] / reqdes.Count();
-                Notelist[4] = Notelist[4] / reqdes.Count();
 
+            };
+
+            if (!(JsIntCompetence.Competence is null)){
+                var req = await HttpRequest.getRequest(App.Url + "api/Notes?filter[where][Id_Competence]=" + JsIntCompetence.Competence.id_Competence + "&filter[include][Tutore]");
+                var reqdes = new List<JSNote>();
+                if (req.Count() > 2)
+                {
+                    //cahnger en double ?
+                    reqdes = JsonConvert.DeserializeObject<List<JSNote>>(req);
+                    foreach (var note in reqdes)
+                    {
+                        Notelist[0] += note.note;
+                        Notelist[1] += note.noteRelationnel;
+                        Notelist[2] += note.noteConnaissance;
+                        Notelist[3] += note.noteCommunication;
+                        Notelist[4] += note.notePedagogie;
+                    }
+                    Estnote = true;
+                    Notelist[0] = Notelist[0] / reqdes.Count();
+                    Notelist[1] = Notelist[1] / reqdes.Count();
+                    Notelist[2] = Notelist[2] / reqdes.Count();
+                    Notelist[3] = Notelist[3] / reqdes.Count();
+                    Notelist[4] = Notelist[4] / reqdes.Count();
+
+                }
+                else
+                {
+                    Estnote = false;
+                }
+                Notes = reqdes;
+                listnote = Notelist;
             }
             else
             {
                 Estnote = false;
+
+                listnote = Notelist;
             }
-            Notes = reqdes;
-            listnote = Notelist;
 
             BuildReportHtml();
 

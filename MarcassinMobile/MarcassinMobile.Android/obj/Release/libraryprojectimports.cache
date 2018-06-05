@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
   <Jars>
-    <Jar>obj\Release\lp\11\jl\support-annotations.jar</Jar>
     <Jar>C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\lp\0\jl\formsviewgroup.jar</Jar>
     <Jar>C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\lp\10\jl\bin\classes.jar</Jar>
     <Jar>C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\lp\11\jl\support-annotations.jar</Jar>
@@ -19,6 +18,10 @@
     <Jar>C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\lp\23\jl\bin\classes.jar</Jar>
     <Jar>C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\lp\24\jl\bin\classes.jar</Jar>
     <Jar>C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\lp\25\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\lp\26\jl\engine.io-client.jar</Jar>
+    <Jar>C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\lp\27\jl\socket.io-client.jar</Jar>
+    <Jar>C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\lp\28\jl\okhttp3.jar</Jar>
+    <Jar>C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\lp\29\jl\okio.jar</Jar>
   </Jars>
   <ResolvedResourceDirectories>
     <ResolvedResourceDirectory>C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\lp\15\jl\res</ResolvedResourceDirectory>

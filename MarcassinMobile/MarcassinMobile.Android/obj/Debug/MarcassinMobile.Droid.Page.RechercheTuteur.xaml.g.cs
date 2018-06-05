@@ -19,13 +19,13 @@ namespace MarcassinMobile.Page {
         private global::Xamarin.Forms.ListView ListTuteurXAML;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button Valider;
+        private global::MarcassinMobile.Utilitaire.BoutonPerso Valider;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(RechercheTuteur));
             ListTuteurXAML = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "ListTuteurXAML");
-            Valider = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "Valider");
+            Valider = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MarcassinMobile.Utilitaire.BoutonPerso>(this, "Valider");
         }
     }
 }

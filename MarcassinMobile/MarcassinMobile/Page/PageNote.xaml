@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MarcassinMobile.Page.PageNote">
+             x:Class="MarcassinMobile.Page.PageNote"
+             xmlns:Custom="clr-namespace:MarcassinMobile.Utilitaire">
     <ContentPage.Content>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -18,7 +19,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label x:Name="titre" Text="Les notes" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/>
+            <Label TextColor="#FCA324" x:Name="titre" Text="Les notes" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/>
             <Label x:Name="Competence" Text="Compétence" Grid.Column="0" Grid.Row="1"/>
             <Label x:Name="Employe" Text="Employé"  Grid.Column="1" Grid.Row="1"/>
             <Label x:Name="general" Text="Général" Grid.Column="0" Grid.Row="2"/>
@@ -106,7 +107,7 @@
                 </Picker.Items>
                 <Picker.SelectedIndex>0</Picker.SelectedIndex>
             </Picker>
-            <Button x:Name="envoyer" Text="Envoyer" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" HorizontalOptions="Center" Clicked="Button_Clicked"/>
+            <Custom:BoutonPerso x:Name="envoyer" Text="Envoyer" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" HorizontalOptions="Center" Clicked="Button_Clicked" CustomBorderColor="#FCA324" CustomBorderWidth="5" CustomBorderRadius="5"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

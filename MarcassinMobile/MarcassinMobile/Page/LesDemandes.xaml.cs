@@ -34,13 +34,17 @@ namespace MarcassinMobile.Page
         {
             if (sender == Demandes)
             {
-                scrollDemandes.IsVisible = true;
-                scrollMesDemandes.IsVisible = false;
+                ListDemandes.IsVisible = true;
+                ListDemandeTutorat.IsVisible = false;
+                BtnDemandes.IsVisible = true;
+                BtnMesDemandes.IsVisible = false;
             }
             else if (sender == MesDemandes)
             {
-                scrollDemandes.IsVisible = false;
-                scrollMesDemandes.IsVisible = true;
+                ListDemandes.IsVisible = false;
+                ListDemandeTutorat.IsVisible = true;
+                BtnDemandes.IsVisible = false;
+                BtnMesDemandes.IsVisible = true;
             }
         }
 
@@ -98,15 +102,7 @@ namespace MarcassinMobile.Page
         async private void CreateGroupe_Clicked(object sender, EventArgs e)
         {
             
-           /* if (scrollDemandes.IsVisible = true)
-            {
-                await Navigation.PushAsync(new CreationGroupe((JSEmploye)ListDemandes.SelectedItem));
-            }
-            else if (scrollMesDemandes.IsVisible =  true)
-            {
-                await Navigation.PushAsync(new CreationGroupe((JSEmploye)ListDemandeTutorat.SelectedItem));
-            }
-            */
+                await Navigation.PushAsync(new CreationGroupe());
         }
     }
 }

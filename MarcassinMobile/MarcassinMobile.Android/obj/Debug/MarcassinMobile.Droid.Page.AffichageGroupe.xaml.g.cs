@@ -19,7 +19,7 @@ namespace MarcassinMobile.Page {
         private global::Xamarin.Forms.Grid AvecModif;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Entry ModifTitre;
+        private global::MarcassinMobile.Utilitaire.CustomEntry ModifTitre;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label IntituleCompActuel;
@@ -37,13 +37,13 @@ namespace MarcassinMobile.Page {
         private global::Xamarin.Forms.ListView ModifListParticipant;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button ConfirmModif;
+        private global::MarcassinMobile.Utilitaire.BoutonPerso ConfirmModif;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Grid SansModif;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button ModifierBtn;
+        private global::MarcassinMobile.Utilitaire.BoutonPerso ModifierBtn;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label Titre;
@@ -58,26 +58,26 @@ namespace MarcassinMobile.Page {
         private global::Xamarin.Forms.ListView ListMembreVue;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button BtnMessagerie;
+        private global::MarcassinMobile.Utilitaire.BoutonPerso BtnMessagerie;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AffichageGroupe));
             AvecModif = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Grid>(this, "AvecModif");
-            ModifTitre = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "ModifTitre");
+            ModifTitre = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MarcassinMobile.Utilitaire.CustomEntry>(this, "ModifTitre");
             IntituleCompActuel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "IntituleCompActuel");
             DescriptionCompActuel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "DescriptionCompActuel");
             ModifCompetence = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "ModifCompetence");
             ListEmploye = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "ListEmploye");
             ModifListParticipant = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "ModifListParticipant");
-            ConfirmModif = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "ConfirmModif");
+            ConfirmModif = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MarcassinMobile.Utilitaire.BoutonPerso>(this, "ConfirmModif");
             SansModif = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Grid>(this, "SansModif");
-            ModifierBtn = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "ModifierBtn");
+            ModifierBtn = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MarcassinMobile.Utilitaire.BoutonPerso>(this, "ModifierBtn");
             Titre = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "Titre");
             Competence = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "Competence");
             Tuteur = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "Tuteur");
             ListMembreVue = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "ListMembreVue");
-            BtnMessagerie = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "BtnMessagerie");
+            BtnMessagerie = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MarcassinMobile.Utilitaire.BoutonPerso>(this, "BtnMessagerie");
         }
     }
 }

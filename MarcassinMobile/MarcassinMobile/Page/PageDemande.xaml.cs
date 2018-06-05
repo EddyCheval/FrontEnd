@@ -31,15 +31,28 @@ namespace MarcassinMobile.Page
         {
             if (sender == testScroll)
             {
-                xurblax.IsVisible = true;
-                xurblux.IsVisible = false;
+                ListDemandeXAML.IsVisible = true;
+                ListCompetenceXAML.IsVisible = false;
+                grilleDemande.IsVisible = true;
+                grilleCompetence.IsVisible = false;
+                BtnDemande.IsVisible = true;
+                BtnDemandePossible.IsVisible = false;
+                RechercheTuteur.IsVisible = false;
+                PosterDemande.IsVisible = false;
             }
             else if (sender == testScroll2)
             {
-                xurblax.IsVisible = false;
-                xurblux.IsVisible = true;
+                ListDemandeXAML.IsVisible = false;
+                ListCompetenceXAML.IsVisible = true;
+                grilleDemande.IsVisible = false;
+                grilleCompetence.IsVisible = true;
+                BtnDemande.IsVisible = false;
+                BtnDemandePossible.IsVisible = true;
+                RechercheTuteur.IsVisible = true;
+                PosterDemande.IsVisible = true;
             }
         }
+
 
         // Partie view liste demande
         public async void GetAllDemande()

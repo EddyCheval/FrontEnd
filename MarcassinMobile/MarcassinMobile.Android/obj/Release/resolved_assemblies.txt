@@ -1,9 +1,13 @@
 C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\android\assets\MarcassinMobile.Android.dll
+C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\android\assets\Engine.IO.Client.dll
 C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\android\assets\FormsViewGroup.dll
 C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\android\assets\Java.Interop.dll
 C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\android\assets\Mono.Android.dll
 C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\android\assets\mscorlib.dll
 C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\android\assets\Newtonsoft.Json.dll
+C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\android\assets\Socket.IO.Client.dll
+C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\android\assets\Square.OkHttp3.dll
+C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\android\assets\Square.OkIO.dll
 C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\android\assets\System.Core.dll
 C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\android\assets\System.dll
 C:\Users\edd98\Projet\MarcassinMobile\MarcassinMobile\MarcassinMobile.Android\obj\Release\android\assets\System.Net.Http.dll

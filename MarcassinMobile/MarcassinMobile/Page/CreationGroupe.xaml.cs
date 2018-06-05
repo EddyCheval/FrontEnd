@@ -23,6 +23,7 @@ namespace MarcassinMobile.Page
 		{
 			InitializeComponent ();
             DateReunion.MinimumDate = DateTime.Now;
+            groupe.Participant = new List<JSEmploye>();
             ChargementData();
 		}
         private async void ChargementData()
@@ -34,9 +35,7 @@ namespace MarcassinMobile.Page
             var reqEmp = await HttpRequest.getRequest(App.Url + "api/Employes");
             ListEmp = JsonConvert.DeserializeObject<List<JSEmploye>>(reqEmp);
 
-            Competence.ItemsSource = ListComp;
-            
-            ListParticipant.ItemsSource = ObservableCollectionConvert.ObservableCollectionConvertion(groupe.Participant);
+            Competence.ItemsSource = ListComp;   
             ListEmploye.ItemsSource = ListEmp;
             
 

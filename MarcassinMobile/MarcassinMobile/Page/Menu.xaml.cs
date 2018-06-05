@@ -30,14 +30,13 @@ namespace MarcassinMobile.Page
             Padding = new Thickness(0, 0);
             var categories = new List<MenuItem>()
             {
-                new MenuItem("MainPage",() => new MainPage()),
-                new MenuItem("Noter un Tuteur", () => new SelectionGroupe()),
                 new MenuItem("Profil",() => new Profil()),
-                new MenuItem("MesDemandes",() => new LesDemandes()),
-                new MenuItem("Demande",() => new PageDemande()),
                 new MenuItem("Recherche",() => new PageRecherche()),
                 new MenuItem("Créer un Groupe", () => new CreationGroupe()),
-                new MenuItem("Deconnexion",() => new PageConnexion())
+                new MenuItem("Noter un Tuteur", () => new SelectionGroupe()),
+                new MenuItem("Mes Demandes",() => new LesDemandes()),
+                new MenuItem("Demande",() => new PageDemande()),
+                new MenuItem("Déconnexion",() => new PageConnexion())
             };
             listView.ItemsSource = categories;
             listView.ItemSelected += (object sender, SelectedItemChangedEventArgs e) => {

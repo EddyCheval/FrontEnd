@@ -107,8 +107,12 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "MarcassinMobile.Android.dll" comes first in this list. */
 		"MarcassinMobile.Android.dll",
+		"Engine.IO.Client.dll",
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
+		"Socket.IO.Client.dll",
+		"Square.OkHttp3.dll",
+		"Square.OkIO.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Annotations.dll",
 		"Xamarin.Android.Support.Compat.dll",

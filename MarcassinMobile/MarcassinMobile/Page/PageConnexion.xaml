@@ -23,7 +23,7 @@
             </Grid.RowDefinitions>
             <Label x:Name="Titre" Text="Connexion" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Font="30" Grid.Column="1" Grid.Row="1" TextColor="#FCA324"/>
             <Label x:Name="Login" Text="Login" Grid.Column="1" Grid.Row="2" VerticalTextAlignment="End" TextColor="#FCA324" Font="18"/>
-            <Custom:CustomEntry VerticalOptions="Center" CustomBorderColor="#FCA324" CustomBorderWidth="5" CustomCornerRadius="5" IsCurvedCornersEnabled="True" x:Name="EntryLogin" Text="1" Grid.Column="1" Grid.Row="3"/>
+            <Custom:CustomEntry VerticalOptions="Center" CustomBorderColor="#FCA324" CustomBorderWidth="5" CustomCornerRadius="5" IsCurvedCornersEnabled="True" x:Name="EntryLogin" Text="Administrateur" Grid.Column="1" Grid.Row="3"/>
             <Label x:Name="MDP" Text="Mot de passe" Grid.Column="1" Grid.Row="4" VerticalTextAlignment="End" TextColor="#FCA324" Font="18"/>
             <Custom:CustomEntry VerticalOptions="Center" CustomBorderColor="#FCA324" CustomBorderWidth="5" CustomCornerRadius="5" IsCurvedCornersEnabled="True" x:Name="EntryMDP" Text="Epsi2018!" Grid.Column="1" Grid.Row="5"/>
             <Custom:BoutonPerso x:Name="Button" Text="Connexion" VerticalOptions="Start" Clicked="Button_Clicked" TextColor="#FCA324" CustomBackgroundColor="#ecf0f1" CustomBorderRadius="10" CustomBorderWidth="5" CustomBorderColor="#FCA324" Grid.Column="1" Grid.Row="7"/>

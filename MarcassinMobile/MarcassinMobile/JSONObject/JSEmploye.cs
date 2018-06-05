@@ -86,7 +86,7 @@ namespace MarcassinMobile.JSONObject
             get { return _dateArrive; }
             set { _dateArrive = value; }
         }
-        [JsonProperty(PropertyName = "DateDepart")]
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore ,PropertyName = "DateDepart")]
         private DateTime _dateDepart;
         public DateTime dateDepart
         {
